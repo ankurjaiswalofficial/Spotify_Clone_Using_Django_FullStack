@@ -12,6 +12,7 @@
   --border_radius: 15px;
   --playlist_bg: #45474d3d;
   --playlist_hover_bg: #2eb32e68;
+  --defaultImage: url("/static/img/spotifyDark.jpg");
 }
 
 * {
@@ -499,7 +500,7 @@ header #library #playlistsHolder .playlist_:hover {
   height: 80px;
   margin: 0;
   border-radius: 10px 0px 0px 10px;
-  background-image: url("./images/spotifyDark.jpg");
+  background-image: var(--defaultImage);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -585,7 +586,7 @@ header #library #playlistsHolder .playlist_:hover {
   width: 160px;
   height: 160px;
   margin-bottom: 10px;
-  background: url("./images/spotifyDark.jpg");
+  background: var(--defaultImage);
   background-size: 100% 100%;
   border-radius: var(--border_radius);
 }
@@ -633,7 +634,7 @@ footer #dataHandler #dataImageHandlerDiv {
   width: 60px;
   height: 60px;
   border-radius: var(--border_radius);
-  background-image: url("./images/spotifyDark.jpg");
+  background-image: var(--defaultImage);
   background-size: 100% 100%;
 }
 footer #dataHandler #info {
