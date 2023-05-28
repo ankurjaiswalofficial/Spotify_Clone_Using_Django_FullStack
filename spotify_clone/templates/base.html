@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'base_style.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>{{title}}</title>
+</head>
+
+<body>
+    <div id="MainContainer">
+        <header>
+            <img src="./images/spotify.png" alt="Spotify Logo">
+            <nav id="pageNav">
+                <div class="navItem">
+                    <i class="bi bi-house-door-fill"></i>
+                    <span>Home</span>
+                </div>
+                <div class="navItem">
+                    <i class="bi bi-search"></i>
+                    <span>Search</span>
+                </div>
+                <!-- <span>About</span> -->
+            </nav>
+            <nav id="library">
+                <div id="libraryMainHeader">
+                    <div id="libraryHeader">
+                        <div>
+                            <i class="bi bi-music-note"></i>
+                            <h3>Your Library</h3>
+                        </div>
+                        <div>
+                            <i id="createPlayList" class="bi bi-plus"></i>
+                        </div>
+                    </div>
+                    <div id="playlistOptions">
+                        <div class="scroller">
+                            <i class="bi bi-chevron-left"></i>
+                        </div>
+                        <div id="horizontalFilter">
+                            <span>Playlists</span>
+                            <span>Podcasts &amp; Shows</span>
+                            <span>Albums</span>
+                            <span>Playlists</span>
+                            <span>Podcasts &amp; Shows</span>
+                            <span>Albums</span>
+                        </div>
+                        <div class="scroller">
+                            <i class="bi bi-chevron-right"></i>
+                        </div>
+                    </div>
+                    <div id="playlistHandlerHeader">
+                        <div id="playlistSearch">
+                            <button><i class="bi bi-search"></i></button>
+                            <div id="playlistSearchHolder">
+                                <i class="bi bi-search"></i>
+                                <input type="text" placeholder="Search In Your Library" name="playlistSearch"
+                                    id="playlistSearchInput">
+                            </div>
+                        </div>
+                        <!-- <div id="playlistSorter">
+                            <select name="playlistSort" id="playlistSort">
+                                <option value="recent" selected>Recent</option>
+                                <option value="recently_added">Recently Added</option>
+                                <option value="alphabetical">Alphabetical</option>
+                                <option value="creator">Creator</option>
+                            </select>
+                        </div> -->
+                        <div id="playlistSorter">
+                            <label class="select" for="slct">
+                                <select id="slct" required="required">
+                                    <option value="recent" selected>Recent</option>
+                                    <option value="recently_added">Recently Added</option>
+                                    <option value="alphabetical">Alphabetical</option>
+                                    <option value="creator">Creator</option>
+                                </select>
+                                <svg>
+                                    <use xlink:href="#select-arrow-down"></use>
+                                </svg>
+                            </label>
+                            <!-- SVG Sprites-->
+                            <svg class="sprites">
+                                <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                                    <polyline points="1 1 5 5 9 1"></polyline>
+                                </symbol>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div id="playlistsHolder">
+                    <div class="playlist_">
+                        <div class="imageHolder">
+                            <img src="./images/spotifyDark.jpg" alt="Image">
+                        </div>
+                        <div class="playlistData">
+                            <div class="infoContent">
+                                <h3>PlayList Name</h3>
+                                <div class="playlistDataInfo">
+                                    <button><i class="bi bi-pin-angle"></i></button>
+                                    <h5>Playlist : 109 Songs</h5>
+                                </div>
+                            </div>
+                            <div class="playlistSpeaker">
+                                <i class="bi bi-volume-up-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Extra Start -->
+                    <div class="playlist_">
+                        <div class="imageHolder">
+                            <img src="./images/spotifyDark.jpg" alt="Image">
+                        </div>
+                        <div class="playlistData">
+                            <div class="infoContent">
+                                <h3>PlayList Name</h3>
+                                <div class="playlistDataInfo">
+                                    <button><i class="bi bi-pin-angle"></i></button>
+                                    <h5>Playlist : 109 Songs</h5>
+                                </div>
+                            </div>
+                            <div class="playlistSpeaker">
+                                <i class="bi bi-volume-up-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_">
+                        <div class="imageHolder">
+                            <img src="./images/spotifyDark.jpg" alt="Image">
+                        </div>
+                        <div class="playlistData">
+                            <div class="infoContent">
+                                <h3>PlayList Name</h3>
+                                <div class="playlistDataInfo">
+                                    <button><i class="bi bi-pin-angle"></i></button>
+                                    <h5>Playlist : 109 Songs</h5>
+                                </div>
+                            </div>
+                            <div class="playlistSpeaker">
+                                <i class="bi bi-volume-up-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_">
+                        <div class="imageHolder">
+                            <img src="./images/spotifyDark.jpg" alt="Image">
+                        </div>
+                        <div class="playlistData">
+                            <div class="infoContent">
+                                <h3>PlayList Name</h3>
+                                <div class="playlistDataInfo">
+                                    <button><i class="bi bi-pin-angle"></i></button>
+                                    <h5>Playlist : 109 Songs</h5>
+                                </div>
+                            </div>
+                            <div class="playlistSpeaker">
+                                <i class="bi bi-volume-up-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_">
+                        <div class="imageHolder">
+                            <img src="./images/spotifyDark.jpg" alt="Image">
+                        </div>
+                        <div class="playlistData">
+                            <div class="infoContent">
+                                <h3>PlayList Name</h3>
+                                <div class="playlistDataInfo">
+                                    <button><i class="bi bi-pin-angle"></i></button>
+                                    <h5>Playlist : 109 Songs</h5>
+                                </div>
+                            </div>
+                            <div class="playlistSpeaker">
+                                <i class="bi bi-volume-up-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_">
+                        <div class="imageHolder">
+                            <img src="./images/spotifyDark.jpg" alt="Image">
+                        </div>
+                        <div class="playlistData">
+                            <div class="infoContent">
+                                <h3>PlayList Name</h3>
+                                <div class="playlistDataInfo">
+                                    <button><i class="bi bi-pin-angle"></i></button>
+                                    <h5>Playlist : 109 Songs</h5>
+                                </div>
+                            </div>
+                            <div class="playlistSpeaker">
+                                <i class="bi bi-volume-up-fill"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Extra End -->
+                </div>
+            </nav>
+        </header>
+        <div id="main">
+            <div id="mainSidebar">
+                <div id="navigationHandler">
+                    <button id="pageBackward" class="pageChanger"><i class="bi bi-chevron-left"></i></button>
+                    <button id="pageForward" class="pageChanger"><i class="bi bi-chevron-right"></i></button>
+                </div>
+                <div id="premium">
+                    <h5 id="privateModeListening">
+                        <i class="bi bi-lock-fill"></i>
+                        &nbsp;Private Session
+                        <span>You are Listening in a Private Session.</span>
+                    </h5>
+                    <h5 id="upgrade">Upgrade</h5>
+                    <button id="account"><i class="bi bi-person-circle"></i></button>
+                </div>
+            </div>
+            <div id="mainScroller">
+                <h2 id="greeting">
+                    Good Evening Ankur
+                </h2>
+                <div id="mainPlaylistHolder">
+                    <div class="playlist_main">
+                        <div class="imageHolder">
+                            <div class="img"></div>
+                        </div>
+                        <div class="playlistData">
+                            <h3>PlayList Name</h3>
+                            <div class="playlist_PLayer">
+                                <div>
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_main">
+                        <div class="imageHolder">
+                            <div class="img"></div>
+                        </div>
+                        <div class="playlistData">
+                            <h3>PlayList Name</h3>
+                            <div class="playlist_PLayer">
+                                <div>
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_main">
+                        <div class="imageHolder">
+                            <div class="img"></div>
+                        </div>
+                        <div class="playlistData">
+                            <h3>PlayList Name</h3>
+                            <div class="playlist_PLayer">
+                                <div>
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_main">
+                        <div class="imageHolder">
+                            <div class="img"></div>
+                        </div>
+                        <div class="playlistData">
+                            <h3>PlayList Name</h3>
+                            <div class="playlist_PLayer">
+                                <div>
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_main">
+                        <div class="imageHolder">
+                            <div class="img"></div>
+                        </div>
+                        <div class="playlistData">
+                            <h3>PlayList Name</h3>
+                            <div class="playlist_PLayer">
+                                <div>
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="playlist_main">
+                        <div class="imageHolder">
+                            <div class="img"></div>
+                        </div>
+                        <div class="playlistData">
+                            <h3>PlayList Name</h3>
+                            <div class="playlist_PLayer">
+                                <div>
+                                    <i class="bi bi-play-circle-fill"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="suggestedPlaylistHolder">
+                    <div class="suggestedPlayListHeader">
+                        <h3>Made for Ankur Jaiswal</h3>
+                        <a href="#ShowAll">Show all</a>
+                    </div>
+                    <div class="playlistsStack">
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="suggestedPlaylistHolder">
+                    <div class="suggestedPlayListHeader">
+                        <h3>Made for Ankur Jaiswal</h3>
+                        <a href="#ShowAll">Show all</a>
+                    </div>
+                    <div class="playlistsStack">
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="suggestedPlaylistHolder">
+                    <div class="suggestedPlayListHeader">
+                        <h3>Made for Ankur Jaiswal</h3>
+                        <a href="#ShowAll">Show all</a>
+                    </div>
+                    <div class="playlistsStack">
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                        <div class="playlistCard">
+                            <div class="playlistCardImage"></div>
+                            <div class="playlistCardContent">
+                                <h4 class="playlistCardContentTopic">
+                                    Daily Mix 1
+                                </h4>
+                                <p class="playlistCardDescription">
+                                    Lorem ipsum dolor
+                                    Lorem ipsum dolor
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div id="dataHandler">
+                <div id="dataImageHandlerDiv"></div>
+                <div id="info">
+                    <label id="fileName" for="dataImageHandlerDiv">AUDIONAME</label>
+                    <label id="fileInfo" for="info">AUTHOR</label>
+                </div>
+                <i id="heart" class="bi bi-heart" aria-hidden="true"></i>
+
+            </div>
+            <div id="onlyHandlers">
+                <div id="handleBar">
+                    <div id="handlerButtonBar">
+                        <i id="shuffle" class="bi bi-shuffle" aria-hidden="true"></i>
+                        <i id="backward" class="bi bi-fast-forward" aria-hidden="true"></i>
+                        <i id="play" class="largerIcon bi bi-play-circle" aria-hidden="true"></i>
+                        <!-- <i id="pause" class="largerIcon bi bi-pause-circle" aria-hidden="true"></i> -->
+                        <i id="forward" class="bi bi-fast-forward" aria-hidden="true"></i>
+                        <i id="repeat" class="bi bi-repeat" aria-hidden="true"></i>
+                        <!-- <i id="repeat1" class="bi bi-repeat-1" aria-hidden="true"></i> -->
+                    </div>
+                    <div id="handlerSliderBar">
+                        <h5 id="timmerStart">-:--</h5>
+                        <input type="range" name="timmer" min="0" max="100" value="0" id="timmer" />
+                        <h5 id="timmerEnd">-:--</h5>
+                    </div>
+                </div>
+                <div id="moreHandlers">
+                    <i class="bi bi-brush"></i>
+                    <i class="bi bi-pc-display"></i>
+                    <i class="bi bi-menu-button-wide"></i>
+                    <i class="bi bi-volume-up-fill" aria-hidden="true"></i>
+                    <!-- <i class="bi bi-volume-down-fill" aria-hidden="true"></i>
+            <i class="bi bi-volume-mute" aria-hidden="true"></i> -->
+                    <input type="range" name="volumeHandler" min="0" max="100" value="0" id="volumeHandler" />
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="{% static 'base_script.js' %}"></script>
+</body>
+
+</html>

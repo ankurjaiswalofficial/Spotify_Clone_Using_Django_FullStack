@@ -1,0 +1,720 @@
+:root {
+  --blue: #1e90ff;
+  --green: #29bd4c;
+  --green_dark: #129731;
+  --white: #fff;
+  --dark_black: #000;
+  --black_state: #1f1f1f;
+  --black_hover: #3a3c3b;
+  --black_bg: #141313;
+  --black_iconic: #302d2d;
+  --black_iconic_dark: #1c181c;
+  --border_radius: 15px;
+  --playlist_bg: #45474d3d;
+  --playlist_hover_bg: #2eb32e68;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--white);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+  /* Input Thumb */
+  /* Input Track */
+}
+* ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+* ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+* ::-webkit-scrollbar-thumb {
+  background: var(--black_state);
+  border-radius: 10px;
+}
+* ::-webkit-scrollbar-thumb:hover {
+  background: var(--black_hover);
+}
+* input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  margin-right: 15px;
+  width: 200px;
+  height: 0.3rem;
+  background: rgb(39, 39, 39);
+  border-radius: 5px;
+  background-image: linear-gradient(var(--white), var(--white));
+  background-size: 7% 100%;
+  background-repeat: no-repeat;
+}
+* input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.75rem;
+  width: 0.75rem;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+}
+* input[type=range]::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+}
+* input[type=range]::-ms-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.8rem;
+  width: 0.8rem;
+  border-radius: 50%;
+  background: var(--white);
+  cursor: pointer;
+}
+* input[type=range]::-webkit-slider-thumb:hover {
+  background: var(--green);
+}
+* input[type=range]::-moz-range-thumb:hover {
+  background: var(--green);
+}
+* input[type=range]::-ms-thumb:hover {
+  background: var(--green);
+}
+* input[type=range]:hover {
+  background-image: linear-gradient(var(--green), var(--green));
+}
+* input[type=range]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+* input[type=range]::-moz-range-track {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+* input[type=range]::-ms-track {
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+body {
+  background-color: var(--dark_black);
+}
+
+#MainContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  padding: 10px;
+  height: calc(100vh - 90px);
+}
+
+header {
+  max-width: 300px;
+  height: 100%;
+  margin-right: 5px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+header img {
+  width: 120px;
+  margin-bottom: 15px;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-height: 100px;
+}
+header #pageNav {
+  width: 100%;
+  border-radius: var(--border_radius);
+  background-color: var(--black_bg);
+  margin: 5px 0px;
+  padding: 0px 20px;
+  height: 120px;
+  align-items: flex-start;
+}
+header #pageNav .navItem {
+  margin: 10px;
+}
+header #pageNav .navItem i {
+  font-size: larger;
+}
+header #pageNav .navItem span {
+  width: 90%;
+  margin: 10px;
+  font-size: large;
+  font-weight: bolder;
+}
+header #library {
+  width: 100%;
+  height: 100%;
+  max-height: 100%;
+  border-radius: var(--border_radius);
+  background-color: var(--black_bg);
+  margin: 5px 0px 0px 0px;
+  justify-content: flex-start;
+}
+header #library #libraryMainHeader {
+  width: 100%;
+  padding: 5px;
+  top: 0;
+}
+header #library #libraryMainHeader #libraryHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header #library #libraryMainHeader #libraryHeader div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header #library #libraryMainHeader #libraryHeader div i {
+  margin-right: 10px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+header #library #libraryMainHeader #playlistOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+header #library #libraryMainHeader #playlistOptions .scroller i {
+  background-color: var(--black_iconic);
+  padding: 10px 12px;
+  border-radius: 50%;
+  font-weight: bolder;
+}
+header #library #libraryMainHeader #playlistOptions #horizontalFilter {
+  width: 400px;
+  height: -moz-fit-content;
+  height: fit-content;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+}
+header #library #libraryMainHeader #playlistOptions #horizontalFilter span {
+  text-align: center;
+  padding: 8px 10px;
+  background: var(--black_iconic);
+  margin: 5px;
+  border-radius: var(--border_radius);
+  font-size: 14px;
+}
+header #library #libraryMainHeader #playlistHandlerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSearch button {
+  display: block;
+  outline: none;
+  border: none;
+  background-color: var(--black_iconic);
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSearch #playlistSearchHolder {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--black_iconic);
+  border-radius: var(--border_radius);
+  padding: 5px 5px;
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSearch #playlistSearchHolder i {
+  margin-left: 10px;
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSearch #playlistSearchHolder input {
+  margin: 0;
+  padding: 5px;
+  background-color: var(--black_iconic);
+  outline: none;
+  border: none;
+  border-radius: var(--border_radius);
+  color: var(--white);
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSearch #playlistSearchHolder input::-moz-placeholder {
+  color: var(--white);
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSearch #playlistSearchHolder input::placeholder {
+  color: var(--white);
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSorter .select {
+  position: relative;
+  min-width: 200px;
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSorter .select svg {
+  position: absolute;
+  right: 12px;
+  top: calc(50% - 3px);
+  width: 10px;
+  height: 6px;
+  stroke-width: 2px;
+  stroke: var(--white);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSorter .select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  padding: 5px 40px 5px 12px;
+  width: 100%;
+  border: 1px solid #e8eaed;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0 1px 3px -2px #9098a9;
+  cursor: pointer;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  background-color: var(--black_iconic);
+  outline: none;
+  border: none;
+  transition: all 150ms ease;
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSorter .select select option {
+  color: var(--white);
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSorter .select select option[value=""][disabled] {
+  display: none;
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSorter .select select:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSorter .select select:hover + svg {
+  stroke: var(--blue);
+}
+header #library #libraryMainHeader #playlistHandlerHeader #playlistSorter .sprites {
+  position: absolute;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+header #library #playlistsHolder {
+  width: 100%;
+  height: 80%;
+  max-height: calc(100vh - 420px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+header #library #playlistsHolder .playlist_ {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  border-radius: var(--border_radius);
+  background-color: var(--black_state);
+}
+header #library #playlistsHolder .playlist_ .imageHolder img {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border_radius);
+  margin-bottom: 0;
+}
+header #library #playlistsHolder .playlist_ .playlistData {
+  width: calc(100% - 75px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header #library #playlistsHolder .playlist_ .playlistData .infoContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 80%;
+}
+header #library #playlistsHolder .playlist_ .playlistData .infoContent h3 {
+  font-size: 14px;
+}
+header #library #playlistsHolder .playlist_ .playlistData .infoContent .playlistDataInfo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+header #library #playlistsHolder .playlist_ .playlistData .infoContent .playlistDataInfo button {
+  margin: 5px;
+  margin-left: 0px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-size: small;
+}
+header #library #playlistsHolder .playlist_ .playlistData .infoContent .playlistDataInfo button i {
+  color: var(--white);
+}
+header #library #playlistsHolder .playlist_ .playlistData .infoContent .playlistDataInfo h5 {
+  white-space: nowrap;
+}
+header #library #playlistsHolder .playlist_ .playlistData .playlistSpeaker {
+  display: none;
+  margin: 10px;
+  font-size: larger;
+  padding-right: 10px;
+}
+header #library #playlistsHolder .playlist_:hover {
+  background-color: var(--black_hover);
+  border-radius: var(--border_radius);
+}
+
+#main {
+  width: 100%;
+  max-width: calc(100% - 300px);
+  height: 100%;
+  margin-left: 5px;
+  border-radius: var(--border_radius);
+  background-color: var(--black_bg);
+}
+#main #mainSidebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#main #mainSidebar #navigationHandler {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main #mainSidebar #navigationHandler button {
+  outline: none;
+  border: none;
+  background-color: var(--dark_black);
+  padding: 5px;
+  border-radius: 50%;
+  margin: 5px;
+}
+#main #mainSidebar #navigationHandler button i {
+  padding: 5px;
+}
+#main #mainSidebar #premium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#main #mainSidebar #premium #privateModeListening,
+#main #mainSidebar #premium #upgrade,
+#main #mainSidebar #premium #account {
+  padding: 10px;
+  margin: 5px;
+  background: var(--blue);
+  border-radius: var(--border_radius);
+}
+#main #mainSidebar #premium #privateModeListening span,
+#main #mainSidebar #premium #upgrade span,
+#main #mainSidebar #premium #account span {
+  display: none;
+}
+#main #mainSidebar #premium #upgrade {
+  color: var(--dark_black);
+  background-color: var(--white);
+}
+#main #mainSidebar #premium #account {
+  outline: none;
+  border: none;
+  background-color: var(--dark_black);
+}
+#main #mainScroller {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  height: 100%;
+  max-height: calc(100vh - 160px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: var(--black_bg);
+}
+#main #mainScroller #greeting {
+  margin: 15px;
+  font-size: 28px;
+}
+#main #mainScroller #mainPlaylistHolder {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main {
+  width: 100%;
+  max-width: 350px;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5px 15px;
+  border-radius: 10px;
+  background-color: var(--playlist_bg);
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main .imageHolder .img {
+  width: 80px;
+  height: 80px;
+  margin: 0;
+  border-radius: 10px 0px 0px 10px;
+  background-image: url("./images/spotifyDark.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main .playlistData {
+  margin-left: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main .playlistData h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main .playlistData .playlist_PLayer {
+  display: none;
+  height: 48px;
+  width: 48px;
+  margin: 10px;
+  font-size: 48px;
+  border-radius: 50%;
+  background-color: var(--dark_black);
+  box-shadow: 0px 3px 3px var(--dark_black);
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main .playlistData .playlist_PLayer div {
+  margin-top: -10px;
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main .playlistData .playlist_PLayer div i {
+  color: var(--green_dark);
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main .playlistData .playlist_PLayer:hover {
+  height: 50px;
+  width: 50px;
+  font-size: 50px;
+  box-shadow: 0px 5px 5px var(--dark_black);
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main:hover {
+  background-color: var(--playlist_hover_bg);
+}
+#main #mainScroller #mainPlaylistHolder .playlist_main:hover .playlist_PLayer {
+  display: block;
+}
+#main #mainScroller hr {
+  width: 100%;
+  margin: 20px 10px;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: transparent;
+}
+#main #mainScroller .suggestedPlaylistHolder {
+  width: 100%;
+  height: 300px;
+  padding: 0px 10px;
+  margin-bottom: 15px;
+}
+#main #mainScroller .suggestedPlaylistHolder .suggestedPlayListHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px;
+}
+#main #mainScroller .suggestedPlaylistHolder .suggestedPlayListHeader h3 {
+  font-size: large;
+}
+#main #mainScroller .suggestedPlaylistHolder .playlistsStack {
+  width: calc(100% - 5px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+#main #mainScroller .suggestedPlaylistHolder .playlistsStack .playlistCard {
+  width: 180px;
+  height: 255px;
+  border-radius: var(--border_radius);
+  background-color: var(--black_state);
+  margin: 10px 15px;
+  padding: 10px;
+}
+#main #mainScroller .suggestedPlaylistHolder .playlistsStack .playlistCard .playlistCardImage {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 10px;
+  background: url("./images/spotifyDark.jpg");
+  background-size: 100% 100%;
+  border-radius: var(--border_radius);
+}
+#main #mainScroller .suggestedPlaylistHolder .playlistsStack .playlistCard .playlistCardContent {
+  width: 100%;
+  padding-left: 10px;
+}
+#main #mainScroller .suggestedPlaylistHolder .playlistsStack .playlistCard .playlistCardContent .playlistCardContentTopic {
+  padding-bottom: 5px;
+  font-weight: bolder;
+}
+#main #mainScroller .suggestedPlaylistHolder .playlistsStack .playlistCard .playlistCardContent .playlistCardDescription {
+  font-size: 13px;
+  line-height: 18px;
+  width: 100%;
+  font-weight: bold;
+  color: var(--white);
+}
+#main #mainScroller .suggestedPlaylistHolder .playlistsStack .playlistCard:hover {
+  background-color: var(--black_hover);
+}
+
+.largerIcon {
+  font-size: 2rem !important;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--black_bg);
+  max-height: 150px;
+}
+footer #dataHandler {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 25%;
+}
+footer #dataHandler #dataImageHandlerDiv {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--border_radius);
+  background-image: url("./images/spotifyDark.jpg");
+  background-size: 100% 100%;
+}
+footer #dataHandler #info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 10px;
+}
+footer #dataHandler #info label {
+  font-size: 14px;
+  white-space: nowrap;
+}
+footer #dataHandler #info #fileName {
+  font-weight: bold;
+}
+footer #dataHandler #info #fileInfo {
+  font-size: 10px;
+}
+footer #dataHandler i {
+  margin-left: 15px;
+  font-size: medium;
+}
+footer #onlyHandlers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  height: 70px;
+}
+footer #onlyHandlers #handleBar {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+footer #onlyHandlers #handleBar #handlerButtonBar {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer #onlyHandlers #handleBar #handlerButtonBar i {
+  margin: 0px 10px;
+  font-size: large;
+}
+footer #onlyHandlers #handleBar #handlerButtonBar #backward {
+  rotate: 180deg;
+}
+footer #onlyHandlers #handleBar #handlerSliderBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer #onlyHandlers #handleBar #handlerSliderBar h5 {
+  white-space: nowrap;
+  font-size: small;
+}
+footer #onlyHandlers #handleBar #handlerSliderBar input {
+  width: 80%;
+  margin: 0px 10px;
+}
+@media only screen and (max-width: 800px) {
+  footer #onlyHandlers #handleBar #handlerSliderBar input {
+    max-width: 200px;
+  }
+}
+footer #onlyHandlers #moreHandlers {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 25%;
+  max-width: 50px;
+}
+footer #onlyHandlers #moreHandlers i {
+  margin-left: 12px;
+  font-size: medium;
+}
+footer #onlyHandlers #moreHandlers input {
+  max-width: 100px;
+}/*# sourceMappingURL=base_style.css.map */
