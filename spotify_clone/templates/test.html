@@ -1,0 +1,10 @@
+
+{% for obj in playlist_model %}
+{{obj.playlist_name}}
+{% for obj1 in obj.playlist_songs %}
+{{obj1}}
+{% endfor %}
+{% for obj2 in obj.playlist_category %}
+{{obj2}}
+{% endfor %}
+{% endfor %}

@@ -305,78 +305,20 @@
                         <a href="#ShowAll">Show all</a>
                     </div>
                     <div class="playlistsStack">
+                        {% for song in song_model %}
                         <div class="playlistCard">
-                            <div class="playlistCardImage"></div>
+                            <img src="media/{{song.song_thumbnail}}" class="playlistCardImage" />
                             <div class="playlistCardContent">
                                 <h4 class="playlistCardContentTopic">
-                                    Daily Mix 1
+                                    {{song.song_album}}
                                 </h4>
                                 <p class="playlistCardDescription">
-                                    Lorem ipsum dolor
-                                    Lorem ipsum dolor
+                                    {{song.song_artist}}
+                                    {{song.song_description}}
                                 </p>
                             </div>
                         </div>
-                        <div class="playlistCard">
-                            <div class="playlistCardImage"></div>
-                            <div class="playlistCardContent">
-                                <h4 class="playlistCardContentTopic">
-                                    Daily Mix 1
-                                </h4>
-                                <p class="playlistCardDescription">
-                                    Lorem ipsum dolor
-                                    Lorem ipsum dolor
-                                </p>
-                            </div>
-                        </div>
-                        <div class="playlistCard">
-                            <div class="playlistCardImage"></div>
-                            <div class="playlistCardContent">
-                                <h4 class="playlistCardContentTopic">
-                                    Daily Mix 1
-                                </h4>
-                                <p class="playlistCardDescription">
-                                    Lorem ipsum dolor
-                                    Lorem ipsum dolor
-                                </p>
-                            </div>
-                        </div>
-                        <div class="playlistCard">
-                            <div class="playlistCardImage"></div>
-                            <div class="playlistCardContent">
-                                <h4 class="playlistCardContentTopic">
-                                    Daily Mix 1
-                                </h4>
-                                <p class="playlistCardDescription">
-                                    Lorem ipsum dolor
-                                    Lorem ipsum dolor
-                                </p>
-                            </div>
-                        </div>
-                        <div class="playlistCard">
-                            <div class="playlistCardImage"></div>
-                            <div class="playlistCardContent">
-                                <h4 class="playlistCardContentTopic">
-                                    Daily Mix 1
-                                </h4>
-                                <p class="playlistCardDescription">
-                                    Lorem ipsum dolor
-                                    Lorem ipsum dolor
-                                </p>
-                            </div>
-                        </div>
-                        <div class="playlistCard">
-                            <div class="playlistCardImage"></div>
-                            <div class="playlistCardContent">
-                                <h4 class="playlistCardContentTopic">
-                                    Daily Mix 1
-                                </h4>
-                                <p class="playlistCardDescription">
-                                    Lorem ipsum dolor
-                                    Lorem ipsum dolor
-                                </p>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <hr>
